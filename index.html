@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intel Skills For Innovation Indonesia Community</title>
+    <meta name="description" content="Bergabunglah dengan komunitas Intel Skills for Innovation Indonesia dan kembangkan pembelajaran inovatif dengan teknologi">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="lib.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <div data-include="header.html"></div>
+    <!-- Header -->
+
+    <!-- Programs Section -->
+    <section class="sfi-programs-section">
+        <div class="container">
+            <h2 class="section-title">Program Skills For Innovation</h2>
+            <div class="program-grid">
+
+                <div class="program-card">
+                    <h3>Professional Development</h3>
+                    <p>Memberdayakan para pendidik untuk menciptakan pengalaman belajar dinamis dan mengembangkan
+                        keterampilan abad ke-21.</p>
+                    <a href="sfi-pro-dev.html" class="btn btn-outline mt-3">Lihat Program</a>
+                </div>
+
+                <div class="program-card">
+                    <h3>Starter Pack Lessons</h3>
+                    <p>Aktivitas dan materi pembelajaran praktis yang membantu guru berinovasi dalam penggunaan
+                        teknologi di kelas.</p>
+                    <a href="sfi-starter-pack.html" class="btn btn-outline mt-3">Lihat Program</a>
+                </div>
+
+                <div class="program-card">
+                    <h3>Intel SFI Ambassador</h3>
+                    <p>Jadilah Intel SFI Ambassador dan dapatkan berbagai peluang eksklusif untuk mengembangkan karir pendidikan Anda!</p>
+                    <a href="sfi-ambassador.html" class="btn btn-outline mt-3">Lihat Program</a>
+                </div>
+
+                <div class="program-card">
+                    <h3>Intel SFI Certified School</h3>
+                    <p>Sekolah bersertifikasi Intel SFI menghadirkan transformasi pendidikan melalui teknologi dan
+                        praktik terbaik di seluruh dunia.</p>
+                    <a href="sfi-certified-school.html" class="btn btn-outline mt-3">Lihat Program</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <h2 class="section-title mb-5">Komunitas SFI di Seluruh Indonesia</h2>
+        <div class="container stats-container">
+
+            <div class="stat-card">
+                <h2 class="count" data-target="1119">0</h2>
+                <p>Mitra Sekolah</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="count" data-target="7632">0</h2>
+                <p>Guru Terlatih</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Intel SFI Section -->
+    <section class="sfi-visit-section">
+        <div class="container d-flex justify-content-center align-items-center flex-wrap gap-4">
+            <span class="sfi-visit-text">Kunjungi situs Intel SFI</span>
+            <a href="https://skillsforinnovation.intel.com/" target="_blank" class="sfi-visit-button">
+                Buka Situs
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <!-- Footer -->
+
+    <!-- Counter Animation Script -->
+    <script>
+        // Counter Animation with Intersection Observer
+        const counters = document.querySelectorAll('.count');
+        let hasAnimated = false;
+
+        const startCounting = (entry) => {
+            if (hasAnimated) return; // Prevent multiple animations
+            
+            const counter = entry.target;
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000; // 2 seconds
+            const increment = Math.ceil(target / (duration / 16)); // 60fps
+
+            let current = 0;
+            const update = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = current.toLocaleString("id-ID");
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString("id-ID");
+                    hasAnimated = true;
+                }
+            };
+            
+            update();
+            observer.unobserve(counter);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    startCounting(entry);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    </script>
+
+    <!-- Script to include external HTML files -->
+    <script>
+        document.querySelectorAll('[data-include]').forEach(el => {
+            fetch(el.getAttribute('data-include'))
+                .then(res => res.text())
+                .then(html => {
+                    el.innerHTML = html;
+                })
+                .catch(err => console.error('Error loading content:', err));
+        });
+    </script>
+
+    <!-- Smooth Scroll Enhancement -->
+    <script>
+        // Add smooth scroll for all internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

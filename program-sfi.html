@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills For Innovation Program</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div data-include="header.html"></div>
+    <!-- Header -->
+
+    <!-- Section 1: Axioo X Intel SFI -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <h1 class="text-center mb-5">Axioo X Intel Skills For Innovation</h1>
+            <div class="row align-items-center g-4">
+                <div class="col-lg-3 col-md-12 image-container">
+                    <img src="pictures/program-sfi/axioointel.jpg" alt="Axioo X Intel" class="content-image"
+                       >
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <p>
+                        Perkembangan pesat teknologi seperti kecerdasan buatan, Internet of Things, dan data science telah mengubah cara manusia bekerja, belajar, dan berpikir. Guru kini dituntut untuk beradaptasi melalui peningkatan kompetensi (upskilling) agar mampu memanfaatkan teknologi dalam pembelajaran yang interaktif, kreatif, dan relevan dengan kebutuhan masa depan. Dalam konteks Revolusi Industri 4.0, peran guru berkembang dari sekadar pengajar menjadi fasilitator yang mendorong siswa untuk berpikir kritis, berkolaborasi, dan berinovasi.
+                    </p>
+                    <p>
+                        Program Intel Skills for Innovation (SFI) hadir sebagai solusi untuk menjembatani kesenjangan antara kemajuan teknologi dan kesiapan tenaga pendidik. Program global ini telah menjangkau lebih dari 150 negara, melatih lebih dari 250.000 guru, dan menghasilkan lebih dari 240 duta pendidikan. Di Indonesia, lisensinya dipegang oleh PT Tera Data Indonusa Tbk (Axioo) sejak Desember 2022 melalui Axioo Class Program. SFI membantu pendidik mengintegrasikan teknologi digital, menerapkan pembelajaran berbasis proyek, mengembangkan literasi AI, dan menumbuhkan pola pikir inovatif. Peserta program tidak hanya memperoleh sertifikasi internasional, tetapi juga berkontribusi pada transformasi digital pendidikan nasional yang adaptif dan berdaya saing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Target Peserta -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Target Peserta</h2>
+            <div class="row align-items-center g-4">
+                <div class="col-lg-9 col-md-12 order-2 order-lg-1">
+                    <p>
+                        Target peserta dari program ini adalah seluruh tenaga pendidik baik untuk lembaga formal dan non-formal dari semua tingkatan.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-12 image-container order-1 order-lg-2">
+                    <img src="pictures/program-sfi/target.jpg" alt="Target Peserta" class="content-image"
+                       >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Tujuan Program -->
+    <section class="content-section bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Tujuan Program</h2>
+            <div class="row align-items-center g-4">
+                <div class="col-lg-3 col-md-12 image-container">
+                    <img src="pictures/program-sfi/tujuan.jpeg" alt="Tujuan Program"
+                        class="content-image">
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <p>
+                        Tujuan utama program SFI adalah <b>mencapai kesiapan tenaga pendidik untuk Revolusi Industri Keempat dan masa depan</b> melalui empat pilar pengembangan pendidik:
+                    </p>
+                    <p>
+                        <b>1. Membangun Fondasi Teknologi:</b> Mendukung pendidik pemula dalam menguasai penggunaan teknologi di kelas (Level 1: Adapter of Technology).
+                    </p>
+                    <p>
+                        <b>2. Memimpin Pengalaman Belajar:</b> Membantu pendidik menjadi pemimpin yang efektif dalam memfasilitasi pengalaman belajar (Level 2: Leader of Learning Experiences).
+                    </p>
+                    <p>
+                        <b>3. Mendorong Kepercayaan Diri Kreatif:</b> Memungkinkan pendidik untuk menata ulang pengalaman belajar dengan teknologi untuk memberdayakan siswa (Level 3: Catalyst of Creative Confidence).
+                    </p>
+                    <p>
+                        <b>4. Menjadi Mentor Pola Pikir:</b> Memperkenalkan pola pikir yang ditingkatkan yang penting bagi siswa (Level 4: Mentor of Upgraded Mindsets).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <!-- Footer -->
+
+    <!-- Script to include external HTML files-->
+    <script>
+        document.querySelectorAll('[data-include]').forEach(el => {
+            fetch(el.getAttribute('data-include'))
+                .then(res => res.text())
+                .then(html => el.innerHTML = html);
+        });
+    </script>
+</body>
+
+</html>
